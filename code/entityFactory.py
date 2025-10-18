@@ -1,9 +1,18 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
-class EntityFactory:
-    def __init__(self):
-        pass
+from code.background import Background
+from code.const import WIN_WIDTH
 
-    def get_entity(self, entity_type):
-        pass
+
+class EntityFactory:
+
+    @staticmethod
+    def get_entity(entity_name: str, position=(0, 0)):
+        match entity_name:
+            case 'Level1Bg':
+                List_Bg = []
+                for i in range(7):
+                    List_Bg.append(Background(f'Level1Bg{i}', (0, 0)))
+                    List_Bg.append(Background(f'Level1Bg{i}', (WIN_WIDTH, 0)))
+                return List_Bg
