@@ -6,6 +6,7 @@ import pygame.image
 
 
 class Entity(ABC):
+
     def __init__(self, name: str, position:tuple):
         self.name = name
         self.surf = pygame.image.load('./asset/'+ name + '.png').convert_alpha()
